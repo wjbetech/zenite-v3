@@ -56,7 +56,7 @@ export function Navbar() {
     <header className="w-full border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-5 py-4">
         <div>
-          <span className="text-3xl font-(--font-merriweather) tracking-tight text-foreground">Zenite</span>
+          <span className="text-3xl font-serif tracking-tight text-foreground">Zenite</span>
           <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground/70">Planner</p>
         </div>
 

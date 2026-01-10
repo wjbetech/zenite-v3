@@ -1,19 +1,7 @@
 import type { Metadata } from "next";
-import { Merriweather, Figtree, Noto_Sans } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar/Navbar";
+import { merriweather, figtree, notoSans } from "@/lib/fonts";
 import "./globals.css";
-
-const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
-
-const merriweather = Merriweather({
-  variable: "--font-merriweather",
-  subsets: ["latin"]
-});
-
-const notoSans = Noto_Sans({
-  variable: "--font-noto-sans",
-  subsets: ["latin"]
-});
 
 export const metadata: Metadata = {
   title: "Zenite",
