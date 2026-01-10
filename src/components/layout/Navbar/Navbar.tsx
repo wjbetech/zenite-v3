@@ -14,9 +14,9 @@ import {
 import { NavItem } from "./NavItem";
 
 const navLinks = [
-  { href: "/", label: "Link 1" },
-  { href: "/link-2", label: "Link 2" },
-  { href: "/link-3", label: "Link 3" }
+  { href: "/", label: "Home" },
+  { href: "/link-2", label: "My Planner" }
+  // { href: "/link-3", label: "" }
 ];
 
 export function Navbar() {

@@ -1,7 +1,5 @@
+import { HomePage } from "@/components/layout/HomePage/HomePage";
+
 export default function Page() {
-  return (
-    <div>
-      <h1>Hello World!</h1>
-    </div>
-  );
+  return <HomePage />;
 }
