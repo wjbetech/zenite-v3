@@ -15,7 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={figtree.variable}>
-      <body className={`${merriweather.variable} ${notoSans.variable} antialiased flex min-h-screen flex-col`}>
+      <body
+        className={`${merriweather.variable} ${notoSans.variable} antialiased flex min-h-screen flex-col bg-orange-50`}>
         <Navbar />
         <main className="flex-1">{children}</main>
       </body>

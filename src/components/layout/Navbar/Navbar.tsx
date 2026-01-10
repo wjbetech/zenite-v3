@@ -12,10 +12,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { NavItem } from "./NavItem";
+import Link from "next/link";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/link-2", label: "My Planner" }
+  { href: "/link-2", label: "Planner" }
   // { href: "/link-3", label: "" }
 ];
 
@@ -56,7 +57,9 @@ export function Navbar() {
     <header className="w-full border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-5 py-4">
         <div>
-          <span className="text-3xl font-serif tracking-tight text-foreground">Zenite</span>
+          <Link href={"/"}>
+            <span className="text-3xl font-serif tracking-tight text-foreground">Zenite</span>
+          </Link>
           <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground/70">Planner</p>
         </div>
 

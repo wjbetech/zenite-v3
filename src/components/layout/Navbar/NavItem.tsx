@@ -17,7 +17,7 @@ const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(function NavIt
       ref={ref}
       href={href}
       className={cn(
-        "text-xs uppercase tracking-[0.35em] text-foreground/70 transition hover:text-foreground focus-visible:outline focus-visible:outline-ring focus-visible:outline-offset-2 font-sans",
+        "text-sm uppercase tracking-[0.35em] text-foreground/50 transition hover:text-foreground focus-visible:outline focus-visible:outline-ring focus-visible:outline-offset-2 font-sans font-bold",
         className
       )}
       {...props}>

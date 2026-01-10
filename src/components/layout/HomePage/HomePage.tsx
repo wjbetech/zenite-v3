@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 // import { NotePencil, CalendarBlank, BookOpen } from "@phosphor-icons/react";
 
 export function HomePage() {
@@ -48,8 +49,8 @@ export function HomePage() {
         </div> */}
         {/* CTA Section */}
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button size="lg" className="min-w-40 font-serif text-sm uppercase tracking-[0.2em]">
-            Open Planner
+          <Button asChild size="lg" className="min-w-40 font-serif text-sm uppercase tracking-[0.2em]">
+            <Link href="/planner">Open Planner</Link>
           </Button>
           <Button variant="outline" size="lg" className="min-w-40 font-serif text-sm uppercase tracking-[0.2em]">
             Learn More
