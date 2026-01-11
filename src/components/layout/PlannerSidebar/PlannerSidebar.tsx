@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { CaretLeft, CaretRight, Calendar, Confetti, Book, SquaresFour } from "@phosphor-icons/react";
 
 export default function PlannerSidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
     {
@@ -54,11 +55,14 @@ export default function PlannerSidebar() {
         <nav className="flex-1 space-y-1 p-2">
           {navItems.map((item) => {
             const Icon = item.icon;
+            const isActive = pathname === item.href || (item.href !== "/planner" && pathname?.startsWith(item.href));
             return (
               <Link key={item.href} href={item.href}>
                 <Button
                   variant="ghost"
-                  className={`w-full justify-start ${isCollapsed ? "px-2" : "px-4"} cursor-pointer`}>
+                  className={`w-full justify-start ${isCollapsed ? "px-2" : "px-4"} cursor-pointer ${
+                    isActive ? "bg-accent text-accent-foreground" : ""
+                  }`}>
                   <Icon className="h-5 w-5 shrink-0" />
                   {!isCollapsed && <span className="ml-3">{item.label}</span>}
                 </Button>
@@ -66,13 +70,6 @@ export default function PlannerSidebar() {
             );
           })}
         </nav>
-
-        <Separator />
-
-        {/* Footer */}
-        <div className="p-4">
-          {!isCollapsed && <p className="text-xs text-muted-foreground">Your productivity hub</p>}
-        </div>
       </div>
     </aside>
   );
