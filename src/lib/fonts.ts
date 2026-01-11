@@ -1,4 +1,4 @@
-import { Merriweather, Figtree, Noto_Sans } from "next/font/google";
+import { Merriweather, Figtree, Noto_Sans, Inconsolata } from "next/font/google";
 
 export const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -14,3 +14,9 @@ export const merriweather = Merriweather({
 });
 
 export const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
+
+export const jetbrainsMono = Inconsolata({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap"
+});

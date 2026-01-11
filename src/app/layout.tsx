@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar/Navbar";
-import { merriweather, figtree, notoSans } from "@/lib/fonts";
+import { merriweather, figtree, notoSans, jetbrainsMono } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={figtree.variable}>
       <body
-        className={`${merriweather.variable} ${notoSans.variable} antialiased flex min-h-screen flex-col bg-orange-50/50`}>
+        className={`${merriweather.variable} ${notoSans.variable} ${jetbrainsMono.variable} antialiased flex min-h-screen flex-col bg-orange-50/50`}>
         <Navbar />
         <main className="flex-1">{children}</main>
       </body>
