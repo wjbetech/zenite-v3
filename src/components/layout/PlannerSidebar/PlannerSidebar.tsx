@@ -40,13 +40,15 @@ export default function PlannerSidebar() {
       }`}>
       <div className="flex h-full flex-col">
         {/* Header */}
-        <div className="flex h-12 items-center justify-between px-4 border-b">
+        <div className={`flex h-12 items-center ${isCollapsed ? "justify-center" : "justify-between"} px-3 border-b`}>
           {!isCollapsed && <h2 className="text-lg font-serif">Menu</h2>}
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setIsCollapsed(!isCollapsed)}
-            className="ml-auto cursor-pointer">
+            className="cursor-pointer hover:bg-muted rounded-md p-1"
+            aria-label={isCollapsed ? "Open sidebar" : "Collapse sidebar"}
+            title={isCollapsed ? "Open sidebar" : "Collapse sidebar"}>
             {isCollapsed ? <CaretRight className="h-4 w-4" /> : <CaretLeft className="h-4 w-4" />}
           </Button>
         </div>
