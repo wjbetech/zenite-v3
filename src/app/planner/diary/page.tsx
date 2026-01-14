@@ -12,6 +12,7 @@ export default function PlannerDiaryPage() {
   // Load diary entry on mount
   useEffect(() => {
     const savedContent = loadDiaryEntry(currentDate);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDiaryText(savedContent);
     setIsLoaded(true);
   }, [currentDate]);
