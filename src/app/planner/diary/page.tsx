@@ -3,24 +3,8 @@
 import { format, addDays, subDays, differenceInDays } from "date-fns";
 import { useState, useEffect } from "react";
 import { saveDiaryEntry, loadDiaryEntry } from "@/lib/storage";
-import {
-  CaretLeft,
-  CaretRight,
-  TextT,
-  TextItalic,
-  TextUnderline,
-  Highlighter,
-  Eraser,
-  List
-} from "@phosphor-icons/react";
-import {
-  Menubar,
-  MenubarMenu,
-  MenubarTrigger,
-  MenubarContent,
-  MenubarItem,
-  MenubarSeparator
-} from "@/components/ui/menubar";
+import { CaretLeft, CaretRight } from "@phosphor-icons/react";
+import DiaryMiniMenu from "@/components/layout/DiaryMiniMenu/DiaryMiniMenu";
 
 export default function PlannerDiaryPage() {
   const today = new Date();
@@ -116,57 +100,8 @@ export default function PlannerDiaryPage() {
 
           {/* Interactive tools menubar - positioned at top right, aligned with day number */}
           <div className="absolute right-12 top-6 z-10 pointer-events-auto">
-            <Menubar>
-              {!isMenuCollapsed && (
-                <>
-                  <MenubarMenu>
-                    <MenubarTrigger className="cursor-pointer hover:bg-muted rounded-md px-2 py-1">
-                      <TextT className="h-4 w-4 mr-2" weight="regular" />
-                      Text
-                    </MenubarTrigger>
-                    <MenubarContent>
-                      <span>
-                        <span className="h-4 w-4 mr-2" />
-                        Bold
-                      </span>
-                      <MenubarItem>
-                        <TextItalic className="h-4 w-4 mr-2" weight="regular" />
-                        Italic
-                      </MenubarItem>
-                      <MenubarItem>
-                        <TextUnderline className="h-4 w-4 mr-2" weight="regular" />
-                        Underline
-                      </MenubarItem>
-                      <MenubarSeparator />
-                      <MenubarItem>
-                        <Highlighter className="h-4 w-4 mr-2" weight="regular" />
-                        Highlight
-                      </MenubarItem>
-                    </MenubarContent>
-                  </MenubarMenu>
-
-                  <MenubarMenu>
-                    <MenubarTrigger className="cursor-pointer hover:bg-muted rounded-md px-2 py-1">
-                      <Eraser className="h-4 w-4 mr-2" weight="regular" />
-                      Edit
-                    </MenubarTrigger>
-                    <MenubarContent>
-                      <MenubarItem>Clear All</MenubarItem>
-                      <MenubarItem>Clear Formatting</MenubarItem>
-                    </MenubarContent>
-                  </MenubarMenu>
-                </>
-              )}
-
-              <button
-                type="button"
-                onClick={() => setIsMenuCollapsed(!isMenuCollapsed)}
-                className="cursor-pointer px-2 py-1.5 rounded-none hover:bg-muted flex items-center justify-center"
-                aria-label={isMenuCollapsed ? "Open tools" : "Close tools"}
-                title={isMenuCollapsed ? "Open tools" : "Close tools"}>
-                <List className="h-4 w-4" weight="regular" />
-              </button>
-            </Menubar>
+            {/* DiaryMiniMenu component */}
+            <DiaryMiniMenu isCollapsed={isMenuCollapsed} setIsCollapsed={setIsMenuCollapsed} />
           </div>
 
           {/* Writing area */}
