@@ -59,12 +59,19 @@ export default function PlannerDiaryPage() {
     <main className="flex-1 overflow-hidden flex flex-col">
       <div className="flex-1 overflow-hidden relative">
         {/* Stacked paper effect with shadows */}
-        <div className="absolute inset-0 bg-background border-y border-border shadow-[0_-2px_8px_rgba(0,0,0,0.1),0_2px_8px_rgba(0,0,0,0.1)]">
-          {/* Lined paper background - full width */}
+        <div className="absolute inset-0 bg-white/98 dark:bg-background/20 border-y border-border shadow-[0_-2px_8px_rgba(0,0,0,0.1),0_2px_8px_rgba(0,0,0,0.1)] backdrop-blur-sm">
+          {/* Lined paper background - separate overlays for light and dark so lines remain visible */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 block dark:hidden"
             style={{
-              backgroundImage: "linear-gradient(transparent 31px, #d4d4d4 1px)",
+              backgroundImage: "linear-gradient(transparent 31px, rgba(0,0,0,0.08) 1px)",
+              backgroundSize: "100% 32px"
+            }}
+          />
+          <div
+            className="absolute inset-0 hidden dark:block"
+            style={{
+              backgroundImage: "linear-gradient(transparent 31px, rgba(255,255,255,0.12) 1px)",
               backgroundSize: "100% 32px"
             }}
           />
@@ -115,7 +122,7 @@ export default function PlannerDiaryPage() {
                 fontFamily: "var(--font-mono)",
                 fontSize: "16px",
                 lineHeight: "32px",
-                paddingTop: "198px" // Adjusted for Inconsolata font alignment
+                paddingTop: "204px" // Adjusted for Inconsolata font alignment
               }}
             />
           </div>

@@ -35,7 +35,7 @@ export default function PlannerSidebar() {
 
   return (
     <aside
-      className={`relative border-r bg-background transition-all duration-300 ease-in-out ${
+      className={`relative border-r border-border bg-background/90 backdrop-blur transition-all duration-300 ease-in-out ${
         isCollapsed ? "w-16" : "w-48"
       }`}>
       <div className="flex h-full flex-col">
